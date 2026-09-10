@@ -6,7 +6,7 @@
   <title>Zenity</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -92,8 +92,96 @@
         </div>
       </nav>
 
-      <!-- Content area placeholder -->
-      <div class="content-area"></div>
+      <!-- Content area -->
+      <div class="content-area">
+
+        <!-- Content Navigation Tabs -->
+        <nav class="content-nav">
+          <a href="#" class="content-nav-tab active">
+            <img src="assets/icon-active-queue.svg" class="tab-icon" alt="">
+            <span>Active Queue</span>
+          </a>
+          <a href="#" class="content-nav-tab tab-after-active">
+            <img src="assets/icon-escalated.svg" class="tab-icon" alt="">
+            <span>Escalated</span>
+          </a>
+          <a href="#" class="content-nav-tab">
+            <img src="assets/icon-resolved.svg" class="tab-icon" alt="">
+            <span>Resolved</span>
+          </a>
+          <a href="#" class="content-nav-tab">
+            <img src="assets/icon-sla-report.svg" class="tab-icon" alt="">
+            <span>SLA Report</span>
+          </a>
+        </nav>
+
+        <!-- Main content body -->
+        <div class="content-body">
+
+          <!-- Page Header -->
+          <div class="page-header">
+            <h1 class="page-title">Active Queue</h1>
+            <div class="live-badge">
+              <span class="live-dot"></span>
+              <span class="live-text">Live</span>
+            </div>
+          </div>
+
+          <!-- Summary Cards -->
+          <div class="summary-container">
+            <div class="summary-inner">
+              <div class="summary-title">
+                <span class="summary-count">260 </span>
+                <span class="summary-label">Active tickets</span>
+              </div>
+              <div class="summary-cards">
+                <div class="summary-card selected">
+                  <div class="card-header">
+                    <img src="assets/status-error.svg" class="status-dot" alt="">
+                    <span class="card-label bold">Needs you now</span>
+                  </div>
+                  <div class="card-stats">
+                    <span class="card-number">25</span>
+                    <span class="card-subtitle">Healthy &amp; reporting</span>
+                  </div>
+                </div>
+                <div class="summary-card">
+                  <div class="card-header">
+                    <img src="assets/status-pending.svg" class="status-dot" alt="">
+                    <span class="card-label">At risk</span>
+                  </div>
+                  <div class="card-stats">
+                    <span class="card-number">67</span>
+                    <span class="card-subtitle">Awaiting connection</span>
+                  </div>
+                </div>
+                <div class="summary-card">
+                  <div class="card-header">
+                    <img src="assets/status-inrange.svg" class="status-dot" alt="">
+                    <span class="card-label">In range</span>
+                  </div>
+                  <div class="card-stats">
+                    <span class="card-number">84</span>
+                    <span class="card-subtitle">Need attention</span>
+                  </div>
+                </div>
+                <div class="summary-card">
+                  <div class="card-header">
+                    <img src="assets/status-breached.svg" class="status-dot" alt="">
+                    <span class="card-label">Breached</span>
+                  </div>
+                  <div class="card-stats">
+                    <span class="card-number">3</span>
+                    <span class="card-subtitle">Need attention</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </div>
   </div>
 </body>
