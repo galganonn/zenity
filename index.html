@@ -179,6 +179,328 @@
             </div>
           </div>
 
+          <!-- Table Container -->
+          <div class="table-container">
+
+          <!-- Filter Bar -->
+          <div class="filter-bar">
+            <div class="filter-actions">
+              <button class="filter-btn">
+                <img src="assets/icon-search-toolbar.svg" alt="" width="20" height="20">
+                <span>Search</span>
+              </button>
+              <button class="filter-btn">
+                <img src="assets/icon-filter.svg" alt="" width="20" height="20">
+                <span>Filter</span>
+              </button>
+              <button class="filter-btn">
+                <img src="assets/icon-groupby.svg" alt="" width="20" height="20">
+                <span>Group By</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Table Sections -->
+          <div class="table-sections">
+
+            <!-- Section: Needs you now -->
+            <div class="table-section">
+              <div class="section-header">
+                <span class="section-dot dot-error"></span>
+                <span class="section-title">Needs you now</span>
+                <span class="section-counter">25</span>
+                <button class="section-chevron">
+                  <img src="assets/icon-chevron-down.svg" alt="" width="18" height="18">
+                </button>
+              </div>
+              <div class="table-wrapper">
+                <div class="left-indicator indicator-error"></div>
+                <table class="ticket-table">
+                  <colgroup>
+                    <col class="col-sla"><col class="col-ticket"><col class="col-customer"><col class="col-tier"><col class="col-priority"><col class="col-owner"><col class="col-status">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th><div class="th-inner"><span>SLA</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon"></div></th>
+                      <th><div class="th-inner"><span>Ticket</span></div></th>
+                      <th><div class="th-inner"><span>Customer</span></div></th>
+                      <th><div class="th-inner"><span>Plan tier</span></div></th>
+                      <th><div class="th-inner"><span>Priority</span></div></th>
+                      <th><div class="th-inner"><span>Owner</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon sort-asc"></div></th>
+                      <th><div class="th-inner"><span>Status</span></div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">4m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:11%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-critical"><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Critical</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/icon-person-empty.svg" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">15m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:25%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-critical"><span class="priority-bar"></span><span class="priority-label">Critical</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">23m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:25%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-critical"><span class="priority-bar"></span><span class="priority-label">Critical</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">34m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:25%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-crowdstrike.png" alt="" class="customer-logo"><span class="customer-name">Crowdstrike</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-critical"><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Critical</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/icon-person-empty.svg" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">34m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:25%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-critical"><span class="priority-bar"></span><span class="priority-label">Critical</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Section: At risk -->
+            <div class="table-section">
+              <div class="section-header">
+                <span class="section-dot dot-warning"></span>
+                <span class="section-title">At risk</span>
+                <span class="section-counter">67</span>
+                <button class="section-chevron">
+                  <img src="assets/icon-chevron-down.svg" alt="" width="18" height="18">
+                </button>
+              </div>
+              <div class="table-wrapper">
+                <div class="left-indicator indicator-warning"></div>
+                <table class="ticket-table">
+                  <colgroup>
+                    <col class="col-sla"><col class="col-ticket"><col class="col-customer"><col class="col-tier"><col class="col-priority"><col class="col-owner"><col class="col-status">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th><div class="th-inner"><span>SLA</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon"></div></th>
+                      <th><div class="th-inner"><span>Ticket</span></div></th>
+                      <th><div class="th-inner"><span>Customer</span></div></th>
+                      <th><div class="th-inner"><span>Plan tier</span></div></th>
+                      <th><div class="th-inner"><span>Priority</span></div></th>
+                      <th><div class="th-inner"><span>Owner</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon sort-asc"></div></th>
+                      <th><div class="th-inner"><span>Status</span></div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">2h 30m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:33%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-high"><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/icon-person-empty.svg" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">2h 45m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:38%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-high"><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">2h 50m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:40%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-high"><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">2h 50m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:40%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-crowdstrike.png" alt="" class="customer-logo"><span class="customer-name">Crowdstrike</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/icon-person-empty.svg" alt=""></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">2h 50m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:40%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Section: In range -->
+            <div class="table-section">
+              <div class="section-header">
+                <span class="section-dot dot-info"></span>
+                <span class="section-title">In range</span>
+                <span class="section-counter">84</span>
+                <button class="section-chevron">
+                  <img src="assets/icon-chevron-down.svg" alt="" width="18" height="18">
+                </button>
+              </div>
+              <div class="table-wrapper">
+                <div class="left-indicator indicator-info"></div>
+                <table class="ticket-table">
+                  <colgroup>
+                    <col class="col-sla"><col class="col-ticket"><col class="col-customer"><col class="col-tier"><col class="col-priority"><col class="col-owner"><col class="col-status">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th><div class="th-inner"><span>SLA</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon"></div></th>
+                      <th><div class="th-inner"><span>Ticket</span></div></th>
+                      <th><div class="th-inner"><span>Customer</span></div></th>
+                      <th><div class="th-inner"><span>Plan tier</span></div></th>
+                      <th><div class="th-inner"><span>Priority</span></div></th>
+                      <th><div class="th-inner"><span>Owner</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon sort-asc"></div></th>
+                      <th><div class="th-inner"><span>Status</span></div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">1d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:55%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/icon-person-empty.svg" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">1d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:55%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">2d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:70%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">2d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:70%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-crowdstrike.png" alt="" class="customer-logo"><span class="customer-name">Crowdstrike</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/icon-person-empty.svg" alt=""></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">3d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:82%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Section: Breached -->
+            <div class="table-section">
+              <div class="section-header">
+                <span class="section-dot dot-breached"></span>
+                <span class="section-title">Breached</span>
+                <span class="section-counter">3</span>
+                <button class="section-chevron">
+                  <img src="assets/icon-chevron-down.svg" alt="" width="18" height="18">
+                </button>
+              </div>
+              <div class="table-wrapper">
+                <div class="left-indicator indicator-breached"></div>
+                <table class="ticket-table">
+                  <colgroup>
+                    <col class="col-sla"><col class="col-ticket"><col class="col-customer"><col class="col-tier"><col class="col-priority"><col class="col-owner"><col class="col-status">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th><div class="th-inner"><span>SLA</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon"></div></th>
+                      <th><div class="th-inner"><span>Ticket</span></div></th>
+                      <th><div class="th-inner"><span>Customer</span></div></th>
+                      <th><div class="th-inner"><span>Plan tier</span></div></th>
+                      <th><div class="th-inner"><span>Priority</span></div></th>
+                      <th><div class="th-inner"><span>Owner</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon sort-asc"></div></th>
+                      <th><div class="th-inner"><span>Status</span></div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">-1d 48m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:8%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/icon-person-empty.svg" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">-23m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:15%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">-11m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:20%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Checkout API returning 500s</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">SAML clock skew causing token rejection on rese...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          </div><!-- end .table-container -->
+
         </div>
 
       </div>

@@ -1,0 +1,28 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="8" y1="0" x2="8" y2="8" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00B4D8"/>
+      <stop offset="1" stop-color="#48CAE4"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="8" y1="8" x2="16" y2="8" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#80ED99"/>
+      <stop offset="1" stop-color="#57CC99"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="8" y1="16" x2="8" y2="8" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFBE0B"/>
+      <stop offset="1" stop-color="#FFB703"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0" y1="8" x2="8" y2="8" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FB5607"/>
+      <stop offset="1" stop-color="#FF006E"/>
+    </linearGradient>
+  </defs>
+  <!-- Top petal -->
+  <path d="M 8 8 C 11 6, 11 2, 8 0 C 5 2, 5 6, 8 8 Z" fill="url(#g1)"/>
+  <!-- Right petal -->
+  <path d="M 8 8 C 10 5, 14 5, 16 8 C 14 11, 10 11, 8 8 Z" fill="url(#g2)"/>
+  <!-- Bottom petal -->
+  <path d="M 8 8 C 5 10, 5 14, 8 16 C 11 14, 11 10, 8 8 Z" fill="url(#g3)"/>
+  <!-- Left petal -->
+  <path d="M 8 8 C 6 11, 2 11, 0 8 C 2 5, 6 5, 8 8 Z" fill="url(#g4)"/>
+</svg>
