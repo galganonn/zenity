@@ -939,12 +939,24 @@ body {
 
 .owner-empty {
   background: transparent;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  overflow: visible;
+  transition: opacity 0.15s;
 }
 
 .owner-empty img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  width: auto;
+  height: 28px;
+  border-radius: 0;
+  display: block;
+  transition: opacity 0.15s;
+}
+
+.owner-empty:hover img {
+  opacity: 0.75;
 }
 
 /* Status Chip */
@@ -1170,4 +1182,19 @@ body {
 
 .take-btn:hover {
   background: #0060c2;
+}
+
+/* ===== AI Priority Popup ===== */
+.ai-popup {
+  position: fixed;
+  z-index: 9999;
+  width: 317px;
+  display: none;
+  pointer-events: none;
+  animation: popupFadeIn 0.15s ease;
+}
+
+@keyframes popupFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
