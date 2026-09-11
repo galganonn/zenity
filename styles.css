@@ -850,9 +850,9 @@ body {
 }
 
 .tier-free {
-  background: transparent;
-  color: #323338;
-  padding: 2px 0;
+  background: #f6f7fb;
+  color: #676879;
+  padding: 2px 8px;
 }
 
 /* Priority Chip */
@@ -957,6 +957,30 @@ body {
 
 .owner-empty:hover img {
   opacity: 0.75;
+}
+
+.owner-unassigned {
+  background: transparent;
+  overflow: visible;
+}
+.owner-unassigned img {
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.owner-viewing {
+  background: transparent;
+  overflow: visible;
+  width: 32px;
+  height: 31px;
+}
+.owner-viewing img {
+  width: 32px;
+  height: 31px;
+  border-radius: 0;
+  object-fit: contain;
 }
 
 /* Status Chip */
