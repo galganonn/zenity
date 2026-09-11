@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
   <div class="app">
@@ -131,58 +131,807 @@
           <div class="summary-container">
             <div class="summary-inner">
               <div class="summary-title">
-                <span class="summary-count">260 </span>
+                <span class="summary-count">51 </span>
                 <span class="summary-label">Active tickets</span>
               </div>
               <div class="summary-cards">
-                <div class="summary-card selected">
+                <div class="summary-card selected" data-filter="needs-you-now">
                   <div class="card-header">
                     <img src="assets/status-error.svg" class="status-dot" alt="">
                     <span class="card-label bold">Needs you now</span>
                   </div>
                   <div class="card-stats">
-                    <span class="card-number">25</span>
-                    <span class="card-subtitle">Healthy &amp; reporting</span>
+                    <span class="card-number">3</span>
+                    <span class="card-subtitle">Under 1 hour left</span>
                   </div>
                 </div>
-                <div class="summary-card">
+                <div class="summary-card" data-filter="at-risk">
                   <div class="card-header">
                     <img src="assets/status-pending.svg" class="status-dot" alt="">
                     <span class="card-label">At risk</span>
                   </div>
                   <div class="card-stats">
-                    <span class="card-number">67</span>
-                    <span class="card-subtitle">Awaiting connection</span>
+                    <span class="card-number">14</span>
+                    <span class="card-subtitle">1–4 hours remaining</span>
                   </div>
                 </div>
-                <div class="summary-card">
+                <div class="summary-card" data-filter="in-range">
                   <div class="card-header">
                     <img src="assets/status-inrange.svg" class="status-dot" alt="">
                     <span class="card-label">In range</span>
                   </div>
                   <div class="card-stats">
-                    <span class="card-number">84</span>
-                    <span class="card-subtitle">Need attention</span>
+                    <span class="card-number">31</span>
+                    <span class="card-subtitle">4+ hours to respond</span>
                   </div>
                 </div>
-                <div class="summary-card">
+                <div class="summary-card" data-filter="breached">
                   <div class="card-header">
                     <img src="assets/status-breached.svg" class="status-dot" alt="">
                     <span class="card-label">Breached</span>
                   </div>
                   <div class="card-stats">
                     <span class="card-number">3</span>
-                    <span class="card-subtitle">Need attention</span>
+                    <span class="card-subtitle">SLA already exceeded</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- Table Container -->
+          <div class="table-container">
+
+          <!-- Filter Bar -->
+          <div class="filter-bar">
+            <div class="filter-actions">
+              <button class="filter-btn">
+                <img src="assets/icon-search-toolbar.svg" alt="" width="20" height="20">
+                <span>Search</span>
+              </button>
+              <button class="filter-btn">
+                <img src="assets/icon-filter.svg" alt="" width="20" height="20">
+                <span>Filter</span>
+              </button>
+              <button class="filter-btn">
+                <img src="assets/icon-groupby.svg" alt="" width="20" height="20">
+                <span>Group By</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Table Sections -->
+          <div class="table-sections">
+
+            <!-- Section: Needs you now -->
+            <div class="table-section" data-section="needs-you-now">
+              <div class="section-header">
+                <span class="section-dot dot-error"></span>
+                <span class="section-title">Needs you now</span>
+                <span class="section-counter">3</span>
+                <button class="section-chevron">
+                  <img src="assets/icon-chevron-down.svg" alt="" width="18" height="18">
+                </button>
+              </div>
+              <div class="table-wrapper">
+                <div class="left-indicator indicator-error"></div>
+                <table class="ticket-table">
+                  <colgroup>
+                    <col class="col-sla"><col class="col-ticket"><col class="col-customer"><col class="col-tier"><col class="col-priority"><col class="col-owner"><col class="col-status">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th><div class="th-inner"><span>SLA</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon"></div></th>
+                      <th><div class="th-inner"><span>Ticket</span></div></th>
+                      <th><div class="th-inner"><span>Customer</span></div></th>
+                      <th><div class="th-inner"><span>Plan tier</span></div></th>
+                      <th><div class="th-inner"><span>Priority</span></div></th>
+                      <th><div class="th-inner"><span>Owner</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon sort-asc"></div></th>
+                      <th><div class="th-inner"><span>Status</span></div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">4m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:11%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Login page down for all users</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Multiple customers locked out after SSO failure, 15+ reports in last hour...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-critical" data-ai-from="Low" data-ai-to="Critical" data-ai-reason="The customer filed this as Low, but the ticket mentions a production outage affecting all users. AI raised it to Critical."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Critical</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+<tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">15m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:25%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Payment processing failing at checkout</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Stripe webhook returning 422, no orders completing since 11:32 AM today...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-critical" data-ai-from="Low" data-ai-to="Critical" data-ai-reason="The customer filed this as Low, but the ticket mentions a production outage affecting all users. AI raised it to Critical."><span class="priority-bar"></span><span class="priority-label">Critical</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+<tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">23m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:25%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Database connection pool exhausted</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Service degraded across all regions, latency spiked to 8s from baseline...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-critical" data-ai-from="Low" data-ai-to="Critical" data-ai-reason="The customer filed this as Low, but the ticket mentions a production outage affecting all users. AI raised it to Critical."><span class="priority-bar"></span><span class="priority-label">Critical</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Section: At risk -->
+            <div class="table-section" data-section="at-risk">
+              <div class="section-header">
+                <span class="section-dot dot-warning"></span>
+                <span class="section-title">At risk</span>
+                <span class="section-counter">14</span>
+                <button class="section-chevron">
+                  <img src="assets/icon-chevron-down.svg" alt="" width="18" height="18">
+                </button>
+              </div>
+              <div class="table-wrapper">
+                <div class="left-indicator indicator-warning"></div>
+                <table class="ticket-table">
+                  <colgroup>
+                    <col class="col-sla"><col class="col-ticket"><col class="col-customer"><col class="col-tier"><col class="col-priority"><col class="col-owner"><col class="col-status">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th><div class="th-inner"><span>SLA</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon"></div></th>
+                      <th><div class="th-inner"><span>Ticket</span></div></th>
+                      <th><div class="th-inner"><span>Customer</span></div></th>
+                      <th><div class="th-inner"><span>Plan tier</span></div></th>
+                      <th><div class="th-inner"><span>Priority</span></div></th>
+                      <th><div class="th-inner"><span>Owner</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon sort-asc"></div></th>
+                      <th><div class="th-inner"><span>Status</span></div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">2h 30m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:33%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Search returning irrelevant results</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Relevance dropped after last night's index rebuild, impacting all customers...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-high"><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">2h 45m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:38%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">File uploads stuck at 99%</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Large file uploads hang on final step and never complete, no error shown...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-high"><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">2h 50m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:40%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Real-time sync stopped updating</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Live collaboration not reflecting peer changes, document appears frozen...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-high"><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">2h 50m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:40%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">SAML token rejected after password reset</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Clock skew or session invalidation causing repeated logout on SAML flow...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-crowdstrike.png" alt="" class="customer-logo"><span class="customer-name">Crowdstrike</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">2h 50m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:40%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Automated reports not sending</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Daily digest emails stopped delivering, queue shows items but nothing sent...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                                      <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">3h 10m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:44%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">CSV export timing out on large datasets</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Export fails after 60 seconds with no file generated, 50k+ rows...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-high"><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">3h 20m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:48%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Mobile app crashes on iOS 17.4</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">App closes immediately on launch after last OS update, reproducible...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-high"><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">High</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">3h 35m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:52%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Slack integration stopped posting alerts</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Webhook was active, alerts stopped 2 days ago, no error in logs...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-high" data-ai-from="Medium" data-ai-to="High" data-ai-reason="Initial triage marked this Medium, but AI detected multiple enterprise customers affected. It escalated to High."><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">3h 45m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:55%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Custom domain SSL certificate expired</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Site showing browser security warning, cert was set to auto-renew...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-high" data-ai-from="Medium" data-ai-to="High" data-ai-reason="Initial triage marked this Medium, but AI detected multiple enterprise customers affected. It escalated to High."><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">3h 50m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:57%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Bulk user import failing silently</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">CSV uploaded successfully but no users appear in org, no error shown...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-crowdstrike.png" alt="" class="customer-logo"><span class="customer-name">Crowdstrike</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-high" data-ai-from="Medium" data-ai-to="High" data-ai-reason="Initial triage marked this Medium, but AI detected multiple enterprise customers affected. It escalated to High."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">High</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">3h 55m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:59%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Email notifications sent to wrong address</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Alerts routing to old email after address update in account settings...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-high" data-ai-from="Medium" data-ai-to="High" data-ai-reason="Initial triage marked this Medium, but AI detected multiple enterprise customers affected. It escalated to High."><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">4h 05m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:62%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Dashboard widget shows stale data</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Revenue widget stuck at yesterday's figures, refresh does not update...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-high" data-ai-from="Medium" data-ai-to="High" data-ai-reason="Initial triage marked this Medium, but AI detected multiple enterprise customers affected. It escalated to High."><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">4h 15m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:65%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Webhook signature validation failing</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Receiving 401 on all inbound webhooks since rotating API key yesterday...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-high" data-ai-from="Medium" data-ai-to="High" data-ai-reason="Initial triage marked this Medium, but AI detected multiple enterprise customers affected. It escalated to High."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">High</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-warning">4h 20m</span><div class="sla-bar"><div class="sla-fill fill-warning" style="width:67%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Permission denied on shared workspace</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Editor role can no longer access shared reports added last week...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-high" data-ai-from="Medium" data-ai-to="High" data-ai-reason="Initial triage marked this Medium, but AI detected multiple enterprise customers affected. It escalated to High."><span class="priority-bar"></span><span class="priority-label">High</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Section: In range -->
+            <div class="table-section" data-section="in-range">
+              <div class="section-header">
+                <span class="section-dot dot-info"></span>
+                <span class="section-title">In range</span>
+                <span class="section-counter">31</span>
+                <button class="section-chevron">
+                  <img src="assets/icon-chevron-down.svg" alt="" width="18" height="18">
+                </button>
+              </div>
+              <div class="table-wrapper">
+                <div class="left-indicator indicator-info"></div>
+                <table class="ticket-table">
+                  <colgroup>
+                    <col class="col-sla"><col class="col-ticket"><col class="col-customer"><col class="col-tier"><col class="col-priority"><col class="col-owner"><col class="col-status">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th><div class="th-inner"><span>SLA</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon"></div></th>
+                      <th><div class="th-inner"><span>Ticket</span></div></th>
+                      <th><div class="th-inner"><span>Customer</span></div></th>
+                      <th><div class="th-inner"><span>Plan tier</span></div></th>
+                      <th><div class="th-inner"><span>Priority</span></div></th>
+                      <th><div class="th-inner"><span>Owner</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon sort-asc"></div></th>
+                      <th><div class="th-inner"><span>Status</span></div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">1d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:55%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Can't remove deactivated user from team</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Former employee account still appearing in permission assignments...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">1d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:55%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">API response missing expected fields</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">created_by field absent from v2 endpoint, was present in v1 response...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low"><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">2d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:70%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Notification preferences not saving</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Email frequency settings revert to default after each browser session...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">2d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:70%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Activity log not showing team edits</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Collaborator changes appear in document but not reflected in audit trail...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-crowdstrike.png" alt="" class="customer-logo"><span class="customer-name">Crowdstrike</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">3d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:82%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Scheduled maintenance window request</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Need planned downtime window for database migration next Tuesday 2am UTC...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                                      <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">1d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:55%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Update billing contact on account</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Need to replace the finance contact before next invoice cycle...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">1d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:58%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Request for additional API rate limit</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Current 1000 req/min limit blocking nightly sync job, need 5000...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">1d 4h</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:60%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">How to set up SAML with Okta</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Following the docs but Okta returns AttributeStatement mismatch...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">1d 8h</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:62%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Download historical usage report</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Need 12-month usage CSV for quarterly board presentation...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-crowdstrike.png" alt="" class="customer-logo"><span class="customer-name">Crowdstrike</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">1d 12h</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:65%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Add team member to organization</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">New CTO joining Monday, need admin access configured beforehand...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">2d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:67%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Change payment to wire transfer</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Finance team requires ACH instead of card for amounts over $10k...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">2d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:68%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Clarify data retention policy</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Legal team asking for written confirmation of 90-day log retention...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">2d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:70%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Migrate data from legacy account</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Acquired a company, need to merge two orgs under one billing entity...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">2d 4h</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:72%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Rename workspace after rebrand</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Company changed name in April, subdomain still shows old brand...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-crowdstrike.png" alt="" class="customer-logo"><span class="customer-name">Crowdstrike</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">2d 8h</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:73%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Set up SSO for Google Workspace</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Attempted SP-initiated flow, redirect returns 500 on callback...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">2d 12h</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:75%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">IP allowlist not working as expected</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Blocked IP still accessing API, allowlist shows it as restricted...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">3d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:76%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Audit log missing user actions</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Bulk delete event not appearing in audit trail, compliance concern...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">3d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:77%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Export report in Excel format</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Reports only export as CSV, finance team needs .xlsx with formatting...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">3d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:78%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Timezone wrong in scheduled reports</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Reports scheduled for 9am deliver at 1pm, account is set to EST...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-crowdstrike.png" alt="" class="customer-logo"><span class="customer-name">Crowdstrike</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">3d 4h</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:79%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Password reset email not received</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">User checked spam, nothing arrived in 30 minutes, account not locked...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">3d 8h</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:80%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">How to archive old projects</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Want to hide completed projects without deleting associated data...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">4d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:81%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">API docs unclear on pagination</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">next_cursor field missing from response on last page of results...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">4d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:82%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Onboarding checklist not completing</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Step 3 marked complete but checklist still shows as incomplete...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">4d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:83%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">2FA recovery code not accepted</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Code copied from PDF, returns invalid token, device already removed...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-crowdstrike.png" alt="" class="customer-logo"><span class="customer-name">Crowdstrike</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">4d 12h</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:84%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Session timeout too aggressive</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Users logged out after 15 minutes idle, need this extended to 4 hours...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">5d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:85%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Duplicate entries in activity feed</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Same event appearing twice in feed since last week's release...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">5d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:86%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Cancel and downgrade subscription</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Want to move to Starter plan at end of billing cycle, not immediately...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">5d 4h</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:87%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Referral credit not applied</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Referred three accounts in March, credit never appeared on invoice...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">6d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:88%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Custom report missing a field</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Assignee field not available in report builder despite being in UI...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-crowdstrike.png" alt="" class="customer-logo"><span class="customer-name">Crowdstrike</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-inprogress"><img src="assets/icon-status-inprogress.svg" alt="" class="status-icon"><span>In progress</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">6d 12h</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:90%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Increase storage limit on Pro plan</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">At 94% capacity, need temporary increase while we archive old files...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-sentry.png" alt="" class="customer-logo"><span class="customer-name">Sentry</span></div></td>
+                      <td><span class="tier-badge tier-free">Free</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Low</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-info">7d</span><div class="sla-bar"><div class="sla-fill fill-info" style="width:92%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Feature request: dark mode</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Multiple team members requesting dark mode for evening usage sessions...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-pending"><img src="assets/icon-status-pending.svg" alt="" class="status-icon"><span>Pending</span></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Section: Breached -->
+            <div class="table-section" data-section="breached">
+              <div class="section-header">
+                <span class="section-dot dot-breached"></span>
+                <span class="section-title">Breached</span>
+                <span class="section-counter">3</span>
+                <button class="section-chevron">
+                  <img src="assets/icon-chevron-down.svg" alt="" width="18" height="18">
+                </button>
+              </div>
+              <div class="table-wrapper">
+                <div class="left-indicator indicator-breached"></div>
+                <table class="ticket-table">
+                  <colgroup>
+                    <col class="col-sla"><col class="col-ticket"><col class="col-customer"><col class="col-tier"><col class="col-priority"><col class="col-owner"><col class="col-status">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th><div class="th-inner"><span>SLA</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon"></div></th>
+                      <th><div class="th-inner"><span>Ticket</span></div></th>
+                      <th><div class="th-inner"><span>Customer</span></div></th>
+                      <th><div class="th-inner"><span>Plan tier</span></div></th>
+                      <th><div class="th-inner"><span>Priority</span></div></th>
+                      <th><div class="th-inner"><span>Owner</span><img src="assets/icon-sort-arrow.svg" alt="" class="sort-icon sort-asc"></div></th>
+                      <th><div class="th-inner"><span>Status</span></div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">-1d 48m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:8%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Data export corrupted for 3 days</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Every export file is a malformed ZIP, customer cannot access their data...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Airbnb</span></div></td>
+                      <td><span class="tier-badge tier-enterprise">Enterprise</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">-23m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:15%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Billing discrepancy on annual renewal</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Charged full rate despite negotiated discount agreed in signed contract...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-clay.png" alt="" class="customer-logo"><span class="customer-name">Clay</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-1.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">-11m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:20%"></div></div></div></div></td>
+                      <td><div class="ticket-cell"><span class="ticket-subject">Critical integration broken post-deploy</span><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Third-party ERP sync failed after last release, production data not flowing...</span></div></div></td>
+                      <td><div class="customer-cell"><img src="assets/logo-vimeo.png" alt="" class="customer-logo"><span class="customer-name">Vimeo</span></div></td>
+                      <td><span class="tier-badge tier-pro">Pro</span></td>
+                      <td><div class="priority-chip priority-low" data-ai-from="Medium" data-ai-to="Low" data-ai-reason="Customer filed this as Medium, but AI assessed the impact as low based on ticket content and account history."><span class="priority-bar"></span><span class="priority-label">Low</span></div></td>
+                      <td><div class="owner-cell"><div class="owner-avatar"><img src="assets/avatar-2.png" alt="" class="avatar-img"></div></div></td>
+                      <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          </div><!-- end .table-container -->
+
         </div>
 
       </div>
     </div>
   </div>
+  <!-- Toast notification -->
+  <div class="toast" id="escalation-toast">
+    <span class="toast-dot"></span>
+    <div class="toast-text">
+      <div class="toast-title">INV76 just went critical</div>
+      <div class="toast-desc">B4 transaction is under review</div>
+    </div>
+    <button class="toast-action">View</button>
+  </div>
+
+  <!-- Simulate escalation button -->
+  <button class="simulate-btn" id="simulate-btn">
+    <span class="sim-icon"></span>
+    <span>Simulate escalation</span>
+  </button>
+
+  <script>
+    const cards = document.querySelectorAll('.summary-card[data-filter]');
+    const sections = document.querySelectorAll('.table-section[data-section]');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const filter = card.dataset.filter;
+        const wasSelected = card.classList.contains('selected');
+
+        cards.forEach(c => c.classList.remove('selected'));
+
+        if (wasSelected) {
+          sections.forEach(s => s.hidden = false);
+        } else {
+          card.classList.add('selected');
+          sections.forEach(s => {
+            s.hidden = s.dataset.section !== filter;
+          });
+        }
+      });
+    });
+
+    // Escalation simulation
+    const simBtn = document.getElementById('simulate-btn');
+    const toast = document.getElementById('escalation-toast');
+    let escalated = false;
+
+    simBtn.addEventListener('click', () => {
+      if (escalated) return;
+      escalated = true;
+
+      const tbody = document.querySelector('.table-section[data-section="needs-you-now"] tbody');
+
+      const tr = document.createElement('tr');
+      tr.className = 'escalated-row';
+      tr.innerHTML = `
+        <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">2m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:5%"></div></div></div></div></td>
+        <td><div class="ticket-cell"><div class="ticket-title-row"><span class="ticket-subject">Billing shows duplicate charge</span><span class="escalated-badge">Auto escalated</span></div><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Customer billed twice for annual plan, refund not yet processed</span></div></div></td>
+        <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Hoot</span></div></td>
+        <td><span class="tier-badge tier-pro">Pro</span></td>
+        <td><div class="priority-chip priority-critical"><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Critical</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+        <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/Chips.png" alt=""></div></div></td>
+        <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+      `;
+
+      tbody.insertBefore(tr, tbody.firstChild);
+
+      // Update counter
+      const cardNumber = document.querySelector('.summary-card[data-filter="needs-you-now"] .card-number');
+      const sectionCounter = document.querySelector('.table-section[data-section="needs-you-now"] .section-counter');
+      const oldCount = parseInt(cardNumber.textContent);
+      cardNumber.textContent = oldCount + 1;
+      cardNumber.classList.add('counter-pulse');
+      sectionCounter.textContent = oldCount + 1;
+
+      // Update total
+      const totalCount = document.querySelector('.summary-count');
+      totalCount.textContent = parseInt(totalCount.textContent) + 1 + ' ';
+
+      // Show toast
+      requestAnimationFrame(() => {
+        toast.classList.add('visible');
+      });
+
+      // Fade row highlight after delay
+      setTimeout(() => {
+        tr.classList.add('fade-highlight');
+      }, 3000);
+
+      // Hide toast after 5s
+      setTimeout(() => {
+        toast.classList.remove('visible');
+      }, 5000);
+
+      // Hide simulate button
+      simBtn.style.display = 'none';
+    });
+
+    document.querySelectorAll('.section-chevron').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.closest('.table-section');
+        const wrapper = section.querySelector('.table-wrapper');
+        const collapsed = section.classList.toggle('collapsed');
+        wrapper.style.height = collapsed ? '0' : '';
+        wrapper.style.overflow = collapsed ? 'hidden' : '';
+        btn.querySelector('img').style.transform = collapsed ? 'rotate(-90deg)' : '';
+      });
+    });
+  </script>
+
+  <!-- AI Priority Popup -->
+  <div class="ai-popup" id="ai-popup">
+    <img src="assets/Picker.png" alt="" style="width:100%;display:block;">
+  </div>
+
+  <script>
+    const aiPopup = document.getElementById('ai-popup');
+
+    document.querySelectorAll('.priority-chip:has(.priority-ai)').forEach(chip => {
+      chip.addEventListener('mouseenter', () => {
+        const rect = chip.getBoundingClientRect();
+        aiPopup.style.display = 'block';
+        const popupRect = aiPopup.getBoundingClientRect();
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const top = spaceBelow > popupRect.height + 8 ? rect.bottom + 8 : rect.top - popupRect.height - 8;
+        const left = Math.min(rect.left, window.innerWidth - 320);
+        aiPopup.style.top = top + 'px';
+        aiPopup.style.left = left + 'px';
+      });
+      chip.addEventListener('mouseleave', () => {
+        aiPopup.style.display = 'none';
+      });
+    });
+  </script>
 </body>
 </html>
