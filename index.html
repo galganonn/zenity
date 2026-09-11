@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
   <div class="app">
@@ -135,7 +135,7 @@
                 <span class="summary-label">Active tickets</span>
               </div>
               <div class="summary-cards">
-                <div class="summary-card selected">
+                <div class="summary-card selected" data-filter="needs-you-now">
                   <div class="card-header">
                     <img src="assets/status-error.svg" class="status-dot" alt="">
                     <span class="card-label bold">Needs you now</span>
@@ -145,7 +145,7 @@
                     <span class="card-subtitle">Healthy &amp; reporting</span>
                   </div>
                 </div>
-                <div class="summary-card">
+                <div class="summary-card" data-filter="at-risk">
                   <div class="card-header">
                     <img src="assets/status-pending.svg" class="status-dot" alt="">
                     <span class="card-label">At risk</span>
@@ -155,7 +155,7 @@
                     <span class="card-subtitle">Awaiting connection</span>
                   </div>
                 </div>
-                <div class="summary-card">
+                <div class="summary-card" data-filter="in-range">
                   <div class="card-header">
                     <img src="assets/status-inrange.svg" class="status-dot" alt="">
                     <span class="card-label">In range</span>
@@ -165,7 +165,7 @@
                     <span class="card-subtitle">Need attention</span>
                   </div>
                 </div>
-                <div class="summary-card">
+                <div class="summary-card" data-filter="breached">
                   <div class="card-header">
                     <img src="assets/status-breached.svg" class="status-dot" alt="">
                     <span class="card-label">Breached</span>
@@ -204,7 +204,7 @@
           <div class="table-sections">
 
             <!-- Section: Needs you now -->
-            <div class="table-section">
+            <div class="table-section" data-section="needs-you-now">
               <div class="section-header">
                 <span class="section-dot dot-error"></span>
                 <span class="section-title">Needs you now</span>
@@ -282,7 +282,7 @@
             </div>
 
             <!-- Section: At risk -->
-            <div class="table-section">
+            <div class="table-section" data-section="at-risk">
               <div class="section-header">
                 <span class="section-dot dot-warning"></span>
                 <span class="section-title">At risk</span>
@@ -360,7 +360,7 @@
             </div>
 
             <!-- Section: In range -->
-            <div class="table-section">
+            <div class="table-section" data-section="in-range">
               <div class="section-header">
                 <span class="section-dot dot-info"></span>
                 <span class="section-title">In range</span>
@@ -438,7 +438,7 @@
             </div>
 
             <!-- Section: Breached -->
-            <div class="table-section">
+            <div class="table-section" data-section="breached">
               <div class="section-header">
                 <span class="section-dot dot-breached"></span>
                 <span class="section-title">Breached</span>
@@ -506,5 +506,110 @@
       </div>
     </div>
   </div>
+  <!-- Toast notification -->
+  <div class="toast" id="escalation-toast">
+    <span class="toast-dot"></span>
+    <div class="toast-text">
+      <div class="toast-title">INV76 just went critical</div>
+      <div class="toast-desc">B4 transaction is under review</div>
+    </div>
+    <button class="toast-action">View</button>
+  </div>
+
+  <!-- Simulate escalation button -->
+  <button class="simulate-btn" id="simulate-btn">
+    <span class="sim-icon"></span>
+    <span>Simulate escalation</span>
+  </button>
+
+  <script>
+    const cards = document.querySelectorAll('.summary-card[data-filter]');
+    const sections = document.querySelectorAll('.table-section[data-section]');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const filter = card.dataset.filter;
+        const wasSelected = card.classList.contains('selected');
+
+        cards.forEach(c => c.classList.remove('selected'));
+
+        if (wasSelected) {
+          sections.forEach(s => s.hidden = false);
+        } else {
+          card.classList.add('selected');
+          sections.forEach(s => {
+            s.hidden = s.dataset.section !== filter;
+          });
+        }
+      });
+    });
+
+    // Escalation simulation
+    const simBtn = document.getElementById('simulate-btn');
+    const toast = document.getElementById('escalation-toast');
+    let escalated = false;
+
+    simBtn.addEventListener('click', () => {
+      if (escalated) return;
+      escalated = true;
+
+      const tbody = document.querySelector('.table-section[data-section="needs-you-now"] tbody');
+
+      const tr = document.createElement('tr');
+      tr.className = 'escalated-row';
+      tr.innerHTML = `
+        <td><div class="sla-cell"><label class="checkbox-wrap"><span class="checkbox-box"></span></label><div class="sla-content"><span class="sla-time time-error">2m</span><div class="sla-bar"><div class="sla-fill fill-error" style="width:5%"></div></div></div></div></td>
+        <td><div class="ticket-cell"><div class="ticket-title-row"><span class="ticket-subject">Billing shows duplicate charge</span><span class="escalated-badge">Auto escalated</span></div><div class="ticket-desc"><img src="assets/icon-star.png" alt="" class="desc-star"><span class="desc-text">Customer billed twice for annual plan, refund not yet processed</span></div></div></td>
+        <td><div class="customer-cell"><img src="assets/logo-airbnb.png" alt="" class="customer-logo"><span class="customer-name">Hoot</span></div></td>
+        <td><span class="tier-badge tier-pro">Pro</span></td>
+        <td><div class="priority-chip priority-critical"><span class="priority-bar"></span><div class="priority-content"><span class="priority-label">Critical</span><img src="assets/icon-star.png" alt="" class="priority-ai"></div></div></td>
+        <td><div class="owner-cell"><div class="owner-avatar owner-empty"><img src="assets/icon-person-empty.svg" alt=""></div></div></td>
+        <td><div class="status-chip status-open"><img src="assets/icon-status-open.svg" alt="" class="status-icon"><span>Open</span></div></td>
+      `;
+
+      tbody.insertBefore(tr, tbody.firstChild);
+
+      // Update counter
+      const cardNumber = document.querySelector('.summary-card[data-filter="needs-you-now"] .card-number');
+      const sectionCounter = document.querySelector('.table-section[data-section="needs-you-now"] .section-counter');
+      const oldCount = parseInt(cardNumber.textContent);
+      cardNumber.textContent = oldCount + 1;
+      cardNumber.classList.add('counter-pulse');
+      sectionCounter.textContent = oldCount + 1;
+
+      // Update total
+      const totalCount = document.querySelector('.summary-count');
+      totalCount.textContent = parseInt(totalCount.textContent) + 1 + ' ';
+
+      // Show toast
+      requestAnimationFrame(() => {
+        toast.classList.add('visible');
+      });
+
+      // Fade row highlight after delay
+      setTimeout(() => {
+        tr.classList.add('fade-highlight');
+      }, 3000);
+
+      // Hide toast after 5s
+      setTimeout(() => {
+        toast.classList.remove('visible');
+      }, 5000);
+
+      // Hide simulate button
+      simBtn.style.display = 'none';
+    });
+
+    document.querySelectorAll('.section-chevron').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.closest('.table-section');
+        const wrapper = section.querySelector('.table-wrapper');
+        const collapsed = section.classList.toggle('collapsed');
+        wrapper.style.height = collapsed ? '0' : '';
+        wrapper.style.overflow = collapsed ? 'hidden' : '';
+        btn.querySelector('img').style.transform = collapsed ? 'rotate(-90deg)' : '';
+      });
+    });
+  </script>
 </body>
 </html>

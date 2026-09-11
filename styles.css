@@ -379,6 +379,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, filter 0.15s;
+}
+
+.summary-card:hover:not(.selected) {
+  background: #f8fbff;
+  border-color: #99ccff;
 }
 
 .summary-card.selected {
@@ -502,6 +509,10 @@ body {
   flex-direction: column;
 }
 
+.table-section[hidden] {
+  display: none;
+}
+
 /* Section Header */
 .section-header {
   display: flex;
@@ -572,6 +583,11 @@ body {
   height: 18px;
   display: block;
   opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+.table-wrapper {
+  transition: height 0.2s ease;
 }
 
 /* Table Wrapper */
@@ -957,4 +973,201 @@ body {
 
 .status-pending {
   color: rgba(50, 51, 56, 0.38);
+}
+
+/* ===== Escalation Animation ===== */
+
+/* Simulate button */
+.simulate-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #323338;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  z-index: 100;
+  transition: background 0.15s;
+}
+
+.simulate-btn:hover {
+  background: #4b4b54;
+}
+
+.simulate-btn .sim-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #d83a52;
+  flex-shrink: 0;
+}
+
+/* Auto-escalated badge */
+.ticket-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.ticket-title-row .ticket-subject {
+  flex: 1;
+  min-width: 0;
+}
+.escalated-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: #d83a52;
+  color: #ffffff;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 14px;
+  white-space: nowrap;
+  animation: badgePop 0.3s ease both;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+@keyframes badgePop {
+  0% { opacity: 0; transform: scale(0.6); }
+  70% { opacity: 1; transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Row slide-in + highlight */
+.escalated-row {
+  animation: rowSlideIn 0.4s ease both;
+}
+
+.escalated-row td {
+  background: rgba(216, 58, 82, 0.06) !important;
+  transition: background 2s ease 1.5s;
+}
+
+.escalated-row.fade-highlight td {
+  background: white !important;
+}
+
+@keyframes rowSlideIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Counter pulse */
+.counter-pulse {
+  animation: pulse 0.4s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: #323338;
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  z-index: 200;
+  transform: translateX(calc(100% + 40px));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 380px;
+}
+
+.toast.visible {
+  transform: translateX(0);
+}
+
+.toast-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d83a52;
+  flex-shrink: 0;
+}
+
+.toast-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.toast-title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.toast-desc {
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+
+.toast-action {
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #579bfc;
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0;
+}
+
+.toast-action:hover {
+  text-decoration: underline;
+}
+
+/* Take & open button */
+.take-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: #0073ea;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  animation: badgePop 0.3s ease both;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.take-btn:hover {
+  background: #0060c2;
 }
