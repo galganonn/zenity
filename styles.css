@@ -755,6 +755,8 @@ body {
 .fill-warning { background: #fdab3d; }
 .fill-info { background: #579bfc; }
 
+[data-section="breached"] .sla-fill { background: transparent; }
+
 /* Ticket Cell */
 .ticket-cell {
   display: flex;
